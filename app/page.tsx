@@ -1,101 +1,133 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Code2, Smartphone, Database, Cog, Building2, Headphones } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
+
+const services = [
+  {
+    icon: <Code2 className="h-12 w-12 text-primary" />,
+    title: "Custom Software Development",
+    description: "Tailored solutions to meet your unique business requirements"
+  },
+  {
+    icon: <Smartphone className="h-12 w-12 text-primary" />,
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile applications"
+  },
+  {
+    icon: <Database className="h-12 w-12 text-primary" />,
+    title: "ERP Solutions",
+    description: "Integrated enterprise resource planning systems"
+  },
+  {
+    icon: <Cog className="h-12 w-12 text-primary" />,
+    title: "Software Implementation",
+    description: "Seamless deployment and integration services"
+  },
+  {
+    icon: <Building2 className="h-12 w-12 text-primary" />,
+    title: "Enterprise Solutions",
+    description: "Scalable solutions for large organizations"
+  },
+  {
+    icon: <Headphones className="h-12 w-12 text-primary" />,
+    title: "Support Services",
+    description: "24/7 technical support and maintenance"
+  }
+];
+
+const stats = [
+  { number: "5+", label: "Years Experience" },
+  { number: "2", label: "Projects Delivered" },
+  { number: "2", label: "Enterprise Clients" },
+  { number: "99%", label: "Client Satisfaction" }
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      {/* Hero Section */}
+      <section className="relative h-[90vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80"
+            alt="Hero background"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="container mx-auto relative z-10 text-white">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Empowering Businesses Through Innovation
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl">
+            Transform your business with cutting-edge software solutions. We deliver custom applications, 
+            ERP systems, and enterprise solutions that drive growth and success.
+          </p>
+          <div className="flex gap-4">
+            <Link href="/contact">
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                Get Started
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button size="lg" variant="outline" className="text-black border-black hover:bg-black/10 hover:text-white">
+                Learn More
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                <div className="text-lg">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Let's discuss how our software solutions can help you achieve your business goals.
+          </p>
+          <Link href="/contact">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Contact Us Today
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
