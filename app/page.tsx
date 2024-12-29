@@ -2,49 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Code2, Smartphone, Database, Cog, Building2, Headphones } from "lucide-react";
+import { Code2, Smartphone, Database, Cog, Building2, Headphones, Users, Shield, Lightbulb, Target } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const services = [
-  {
-    icon: <Code2 className="h-12 w-12 text-primary" />,
-    title: "Custom Software Development",
-    description: "Tailored solutions to meet your unique business requirements"
-  },
-  {
-    icon: <Smartphone className="h-12 w-12 text-primary" />,
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications"
-  },
-  {
-    icon: <Database className="h-12 w-12 text-primary" />,
-    title: "ERP Solutions",
-    description: "Integrated enterprise resource planning systems"
-  },
-  {
-    icon: <Cog className="h-12 w-12 text-primary" />,
-    title: "Software Implementation",
-    description: "Seamless deployment and integration services"
-  },
-  {
-    icon: <Building2 className="h-12 w-12 text-primary" />,
-    title: "Enterprise Solutions",
-    description: "Scalable solutions for large organizations"
-  },
-  {
-    icon: <Headphones className="h-12 w-12 text-primary" />,
-    title: "Support Services",
-    description: "24/7 technical support and maintenance"
-  }
-];
-
-const stats = [
-  { number: "5+", label: "Years Experience" },
-  { number: "2", label: "Projects Delivered" },
-  { number: "2", label: "Enterprise Clients" },
-  { number: "99%", label: "Client Satisfaction" }
-];
+import { values, stats, Stat } from "./data/data";
 
 export default function Home() {
   return (
@@ -84,16 +45,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Core Values Section */}
+      <section className="py-20">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+          <h2 className="text-4xl font-bold text-center mb-16">Our Core Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="flex justify-center mb-4">{value.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </Card>
             ))}
           </div>
@@ -104,7 +65,7 @@ export default function Home() {
       <section className="py-20 bg-primary text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+            {stats.map((stat: Stat, index: number) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
                 <div className="text-lg">{stat.label}</div>

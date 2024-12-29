@@ -13,8 +13,9 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
     { name: "Marketplace", href: "/marketplace" },
-    { name: "Contact", href: "/contact" },
+    
   ];
 
   return (
@@ -37,7 +38,7 @@ export default function Header() {
               </Link>
             ))}
             <Link href="/contact">
-              <Button className="bg-primary hover:bg-primary/90">Get Started</Button>
+              <Button className="bg-primary hover:bg-primary/90">Contact US</Button>
             </Link>
           </div>
 
