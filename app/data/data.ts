@@ -1,3 +1,5 @@
+import smsgateway from "../../assets/smsgateway.png"
+
 export interface Service {
   icon: string; 
   title: string;
@@ -84,7 +86,7 @@ export const products = [
       title: "Odoo SMS Gateway",
       description:
         "A tailor-made SMS gateway solution designed to send automated SMS notifications for invoices and payments. Developed using the reliable Sri Lankan Mobitel telecommunication network.",
-      image: null,
+      image: smsgateway,
       features: [
         "Automated Invoice Notifications",
         "Payment Confirmation SMS",

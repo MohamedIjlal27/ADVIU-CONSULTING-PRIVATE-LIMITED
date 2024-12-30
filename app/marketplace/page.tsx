@@ -66,7 +66,7 @@ export default function Marketplace() {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-lg transition-shadow bg-white rounded-lg shadow-md"
+              className="overflow-hidden hover:shadow-lg transition-shadow bg-white rounded-lg shadow-md mb-10"
             >
               <div className="relative h-48">
                 {product.image ? (

@@ -4,13 +4,13 @@ import logadviu_logo from "../assets/adviu_logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white py-12">
+    <footer className="bg-primary text-white py-2">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src={logadviu_logo} alt="Logo" width={150} height={150} />
+              <Image src={logadviu_logo} alt="Logo" width={120} height={120} />
             </Link>
             <p className="text-primary-foreground/80">
               Empowering businesses through innovative software solutions.
@@ -19,7 +19,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-primary-foreground/80 hover:text-white transition-colors">
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-3">Services</h3>
             <ul className="space-y-2">
               <li>
                 <span className="text-primary-foreground/80">Custom Software Development</span>
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
             <ul className="space-y-2">
               <li>
                 <a href="https://wa.me/+94742008950" className="text-primary-foreground/80 hover:text-white transition-colors">
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-primary-foreground/80">
+        <div className="mt-8 pt-6 border-t border-white/10 text-center text-primary-foreground/80">
           <p>&copy; {new Date().getFullYear()} ADVIU Consulting. All rights reserved.</p>
         </div>
       </div>
