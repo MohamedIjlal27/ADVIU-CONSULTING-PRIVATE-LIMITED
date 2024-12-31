@@ -5,13 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
+    productName: ""
   });
 
   const [loading, setLoading] = useState(false);
@@ -31,7 +33,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "", productName: "" });
       } else {
         toast.error("Failed to send message. Please try again.");
       }
@@ -42,10 +44,17 @@ export default function ContactForm() {
     setLoading(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      productName: value
     }));
   };
 
@@ -62,6 +71,22 @@ export default function ContactForm() {
           onChange={handleChange}
           required
         />
+      </div>
+      <div>
+        <label htmlFor="productName" className="block text-sm font-medium mb-2">
+          Product Name
+        </label>
+        <Select
+          value={formData.productName}
+          onValueChange={handleSelectChange}
+        >
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select Product" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Odoo SMS Gateway">Odoo SMS Gateway</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       <div>
         <label htmlFor="email" className="block text-sm font-medium mb-2">

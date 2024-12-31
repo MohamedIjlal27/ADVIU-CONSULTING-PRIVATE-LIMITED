@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Company Info */}
           <div className="space-y-3">
-            <Link href="/" className="flex items-center space-x-2">
+            {/*<Link href="/" className="flex items-center space-x-2">
               <Image src={logadviu_logo} alt="Logo" width={120} height={120} />
-            </Link>
+            </Link>*/}
             <p className="text-primary-foreground/80">
               Empowering businesses through innovative software solutions.
             </p>

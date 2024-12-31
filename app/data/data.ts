@@ -84,6 +84,7 @@ export const stats: Stat[] = [
 export const products = [
     {
       title: "Odoo SMS Gateway",
+      price: "USD 150.00",
       description:
         "A tailor-made SMS gateway solution designed to send automated SMS notifications for invoices and payments. Developed using the reliable Sri Lankan Mobitel telecommunication network.",
       image: smsgateway,
@@ -93,5 +94,8 @@ export const products = [
         "Customizable Messaging Templates",
         "Integration with Your Existing Systems",
       ],
+      version: "16.0",
+      platform: "Odoo Online / All Platforms",
+      category: "Communication",
     },
   ];
